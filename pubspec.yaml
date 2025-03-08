@@ -1,0 +1,18 @@
+name: bankcol
+description: BankCol - Billetera Virtual Android
+
+environment:
+  sdk: '>=3.7.0 <4.0.0'
+  flutter: ">=3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  firebase_core: ^2.24.2
+  firebase_auth: ^4.15.3
+  cloud_firestore: ^4.13.6
+  firebase_messaging: ^14.7.10
+  flutter_local_notifications: ^16.3.2
+  provider: ^6.1.1
+  get: ^4.6.6
+  google_sign_in: ^6.1.6

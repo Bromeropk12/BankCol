@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "823189633044",
+    "project_id": "bankcol-8dbcd",
+    "storage_bucket": "bankcol-8dbcd.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:823189633044:android:37f0ddeac476df67268f01",
+        "android_client_info": {
+          "package_name": "com.bankcol.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBoFzuPG-0lLWegYrOF5PMIIyIRKqX3xsA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
