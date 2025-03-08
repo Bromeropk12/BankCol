@@ -1,7 +1,7 @@
 # BankCol - Billetera Virtual Android
 
 ## Descripción
-Aplicación de billetera virtual para Android desarrollada con Flutter y Firebase que permite crear una única cuenta por usuario, verificada mediante SMS y Google, para realizar transferencias simuladas en tiempo real.
+Aplicación de billetera virtual para Android desarrollada nativamente con Kotlin que permite crear una única cuenta por usuario, verificada mediante SMS y Google, para realizar transferencias simuladas en tiempo real.
 
 ## Tabla de Contenidos
 1. [Características Principales](#características-principales)
@@ -23,26 +23,26 @@ Aplicación de billetera virtual para Android desarrollada con Flutter y Firebas
 
 ## Tecnologías
 ### Frontend
-- Flutter SDK
-- Material Design
-- Provider para estado
-- GetX para navegación
+- Kotlin
+- Jetpack Compose
+- ViewModel + LiveData
+- Coroutines
+- Navigation Component
 
 ### Backend (Firebase)
 - Authentication
 - Cloud Firestore
-- Cloud Functions (opcional)
+- Cloud Functions
 - Cloud Messaging
 
 ### Herramientas de Desarrollo
 - Android Studio / VS Code
 - Git
-- Flutter DevTools
+- Android Debug Bridge (ADB)
 
 ## Requisitos
 - Windows 10/11
-- Flutter SDK 3.0+
-- Android Studio
+- Android Studio Arctic Fox o superior
 - JDK 11+
 - Dispositivo Android 6.0+ o emulador
 - Cuenta de Firebase (plan gratuito)
@@ -50,43 +50,32 @@ Aplicación de billetera virtual para Android desarrollada con Flutter y Firebas
 ## Instalación
 1. **Preparar Entorno**
 ```bash
-flutter doctor
 git clone https://github.com/Bromeropk12/BankCol.git
 cd BankCol
-flutter pub get
+./gradlew build
 ```
 
 2. **Configurar Firebase**
 - Crear proyecto en Firebase Console
 - Añadir app Android
 - Descargar google-services.json
-- Colocar en android/app/
-- Habilitar servicios necesarios
-
-3. **Variables de Entorno**
-```dart
-// filepath: lib/config/env.dart
-const FIREBASE_API_KEY = "tu_api_key";
-const FIREBASE_PROJECT_ID = "tu_proyecto_id";
-```
+- Colocar en app/
 
 ## Estructura del Proyecto
 ```
-lib/
-├── main.dart
-├── config/
-├── models/
-├── screens/
-├── services/
-├── widgets/
-└── utils/
-
-database/
-└── users/
-    ├── userId/
-    │   ├── profile/
-    │   ├── account/
-    │   └── transactions/
+app/
+├── src/
+│   ├── main/
+│   │   ├── java/com/bankcol/
+│   │   │   ├── data/
+│   │   │   ├── di/
+│   │   │   ├── domain/
+│   │   │   ├── presentation/
+│   │   │   └── utils/
+│   │   ├── res/
+│   │   └── AndroidManifest.xml
+│   └── test/
+└── build.gradle
 ```
 
 ## Seguridad
@@ -112,26 +101,26 @@ service cloud.firestore {
 
 ## Testing
 ### Pruebas Unitarias
-```dart
-// filepath: test/auth_test.dart
-void main() {
-  testWidgets('Login test', (WidgetTester tester) async {
-    // Implementación
-  });
+```kotlin
+@Test
+fun loginTest() {
+    runBlocking {
+        // Implementación
+    }
 }
 ```
 
 ### Pruebas de Integración
-- Flujos completos de usuario
-- Transacciones
-- Autenticación
-- UI/UX
+- Pruebas de UI con Espresso
+- Pruebas de navegación
+- Pruebas de repositorio
+- Pruebas de ViewModel
 
 ## Documentación
 ### Para Desarrolladores
 - Guía de instalación
 - API Reference
-
+- Guía de arquitectura
 
 ### Para Usuarios
 - Manual de uso
@@ -147,7 +136,7 @@ void main() {
 5. Crear Pull Request
 
 ## Licencia
-
+MIT
 
 ## Contacto
 - Desarrollador: Briann Sneyder Romero 
